@@ -1,3 +1,3 @@
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UICollectionViewDelegateFlowLayout>
 
 @end

@@ -1,0 +1,3 @@
+@interface PhotoGridCollectionViewLayout : UICollectionViewFlowLayout
+
+@end

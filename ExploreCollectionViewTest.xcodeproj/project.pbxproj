@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		555541951677783600FE4F70 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555541941677783600FE4F70 /* QuartzCore.framework */; };
+		555541B116778C4B00FE4F70 /* PhotoGridCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 555541B016778C4B00FE4F70 /* PhotoGridCollectionViewLayout.m */; };
 		5563F9FF16777119002F654D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5563F9FE16777119002F654D /* UIKit.framework */; };
 		5563FA0116777119002F654D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5563FA0016777119002F654D /* Foundation.framework */; };
 		5563FA0316777119002F654D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5563FA0216777119002F654D /* CoreGraphics.framework */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		555541941677783600FE4F70 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		555541AF16778C4B00FE4F70 /* PhotoGridCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridCollectionViewLayout.h; sourceTree = "<group>"; };
+		555541B016778C4B00FE4F70 /* PhotoGridCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridCollectionViewLayout.m; sourceTree = "<group>"; };
 		5563F9FA16777119002F654D /* ExploreCollectionViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreCollectionViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5563F9FE16777119002F654D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5563FA0016777119002F654D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,9 +49,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5563F9FF16777119002F654D /* UIKit.framework in Frameworks */,
 				5563FA0116777119002F654D /* Foundation.framework in Frameworks */,
 				5563FA0316777119002F654D /* CoreGraphics.framework in Frameworks */,
+				5563F9FF16777119002F654D /* UIKit.framework in Frameworks */,
+				555541951677783600FE4F70 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +79,10 @@
 		5563F9FD16777119002F654D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5563F9FE16777119002F654D /* UIKit.framework */,
 				5563FA0016777119002F654D /* Foundation.framework */,
 				5563FA0216777119002F654D /* CoreGraphics.framework */,
+				5563F9FE16777119002F654D /* UIKit.framework */,
+				555541941677783600FE4F70 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,6 +95,8 @@
 				5563FA1616777119002F654D /* MainStoryboard.storyboard */,
 				5563FA1916777119002F654D /* ViewController.h */,
 				5563FA1A16777119002F654D /* ViewController.m */,
+				555541AF16778C4B00FE4F70 /* PhotoGridCollectionViewLayout.h */,
+				555541B016778C4B00FE4F70 /* PhotoGridCollectionViewLayout.m */,
 				5563FA0516777119002F654D /* Supporting Files */,
 			);
 			path = ExploreCollectionViewTest;
@@ -176,6 +185,7 @@
 				5563FA0B16777119002F654D /* main.m in Sources */,
 				5563FA0F16777119002F654D /* AppDelegate.m in Sources */,
 				5563FA1B16777119002F654D /* ViewController.m in Sources */,
+				555541B116778C4B00FE4F70 /* PhotoGridCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +304,7 @@
 				5563FA2016777119002F654D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
