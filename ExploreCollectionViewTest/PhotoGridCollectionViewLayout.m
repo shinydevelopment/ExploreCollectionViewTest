@@ -11,11 +11,20 @@
 {
   NSArray *array = [super layoutAttributesForElementsInRect:rect];
 
+  enum { leftSide = -1, rightSide = 1 };
+  CGFloat const startPercentage = 0.3; // When do the cards start rotating out on either side?
   CGRect bounds = self.collectionView.bounds;
-  CGFloat centerX = bounds.origin.x + (bounds.size.width / 2);
+  CGFloat halfBoundsWidth = bounds.size.width / 2;
+  CGFloat centerX = bounds.origin.x + halfBoundsWidth;
   for (UICollectionViewLayoutAttributes *attributes in array) {
-    CGFloat distanceFromCenterX = fabs(centerX - attributes.center.x);
-    CGFloat scale = 1 - (distanceFromCenterX * 0.0005);
+    CGFloat sideOfView = (attributes.center.x < centerX) ? leftSide : rightSide;
+    CGFloat pointToMeasure = (sideOfView == leftSide) ? attributes.frame.origin.x + attributes.size.width : attributes.frame.origin.x; // Track the rightmost point on views being removed on the left side and vice versa
+    CGFloat distanceOfPointFromCenterX = centerX - pointToMeasure;
+    CGFloat percentageX = 1 - fabs(distanceOfPointFromCenterX / halfBoundsWidth); // Distance from the edge of the view as a percentage 0 -> 100% (ignoring ±)
+    percentageX = MIN(MAX(0, percentageX), startPercentage); // Clip the percentages to 0 -> startPercengate%
+    CGFloat adjustedPercentageX = percentageX / startPercentage;
+    CGFloat scale = 1 * adjustedPercentageX;
+    CGFloat angle = M_PI_4 * (percentageX * 5);
     attributes.transform3D = CATransform3DMakeScale(scale, scale, 0);
   }
   return array;
