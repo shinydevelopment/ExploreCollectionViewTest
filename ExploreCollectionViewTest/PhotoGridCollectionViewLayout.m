@@ -26,6 +26,11 @@
     CGFloat scale = 1 * adjustedPercentageX;
     CGFloat angle = M_PI_4 * (percentageX * 5);
     attributes.transform3D = CATransform3DMakeScale(scale, scale, 0);
+
+    if (attributes == array[8]) {
+      NSLog(@"%f %f", distanceOfPointFromCenterX, adjustedPercentageX);
+      attributes.transform3D = CATransform3DMakeScale(0.5, 0.5, 1);
+    }
   }
   return array;
 }
