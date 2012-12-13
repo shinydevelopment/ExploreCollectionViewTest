@@ -12,7 +12,7 @@
   NSArray *array = [super layoutAttributesForElementsInRect:rect];
 
   enum { leftSide = -1, rightSide = 1 };
-  CGFloat const startPercentage = 0.3; // When do the cards start rotating out on either side?
+  CGFloat const startPercentage = 0.5;
   CGRect bounds = self.collectionView.bounds;
   CGFloat halfBoundsWidth = bounds.size.width / 2;
   CGFloat centerX = bounds.origin.x + halfBoundsWidth;
@@ -23,14 +23,13 @@
     CGFloat percentageX = 1 - fabs(distanceOfPointFromCenterX / halfBoundsWidth); // Distance from the edge of the view as a percentage 0 -> 100% (ignoring ±)
     percentageX = MIN(MAX(0, percentageX), startPercentage); // Clip the percentages to 0 -> startPercengate%
     CGFloat adjustedPercentageX = percentageX / startPercentage;
-    CGFloat scale = 1 * adjustedPercentageX;
-    CGFloat angle = M_PI_4 * (percentageX * 5);
-    attributes.transform3D = CATransform3DMakeScale(scale, scale, 0);
 
-    if (attributes == array[8]) {
-      NSLog(@"%f %f", distanceOfPointFromCenterX, adjustedPercentageX);
-      attributes.transform3D = CATransform3DMakeScale(0.5, 0.5, 1);
-    }
+    CGFloat angle = M_PI_2 * (1 - adjustedPercentageX);
+    attributes.transform3D = CATransform3DMakeRotation(angle * sideOfView, 0, 1, 0);
+//    if (attributes == array[8]) {
+//      NSLog(@"%f %f", adjustedPercentageX, angle);
+//      attributes.transform3D = CATransform3DMakeScale(0.5, 0.5, 1);
+//    }
   }
   return array;
 }
