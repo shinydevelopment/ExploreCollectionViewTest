@@ -21,7 +21,7 @@
 
   // Change startPercentage to adjust when the cells start to transition out of their untransformed state
   // Values for start percentage are between 0 and 1 representing the range of 0 to half the screen
-  CGFloat const startPercentage = 0.4;
+  CGFloat const startPercentage = 0.75;
 
   // Pre-calculate as much as possible, values here will change when the bounds of the collection
   // view change but will not change for each cell
@@ -51,7 +51,8 @@
     CGFloat angle = M_PI_2 * (1 - adjustedPercentageX);
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = 1.0 / -1000; // m34 must be set before the transform so it knows depth
-    transform = CATransform3DRotate(transform, angle * sideOfView, 0, 1, 0);
+    transform = CATransform3DRotate(transform, angle * sideOfView, 0, 1, 1);
+    transform = CATransform3DTranslate(transform, sideOfView * (100 * (1 - adjustedPercentageX)), 0, 0);
     attributes.transform3D = transform;
 
     // Set the anchor point for the cell depending on the side
