@@ -1,10 +1,16 @@
 #import "PhotoGridCollectionViewLayout.h"
+#import "PhotoGridViewLayoutAttributes.h"
 
 @implementation PhotoGridCollectionViewLayout
 
 - (void)prepareLayout
 {
   [super prepareLayout];
+}
+
++ (Class)layoutAttributesClass
+{
+  return [PhotoGridViewLayoutAttributes class];
 }
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
@@ -24,7 +30,7 @@
   CGFloat centerX = bounds.origin.x + halfBoundsWidth;
 
   // Process each cell in the visible rectangle (and some others which are included for some reason)
-  for (UICollectionViewLayoutAttributes *attributes in array) {
+  for (PhotoGridViewLayoutAttributes *attributes in array) {
     // Which side of the center point is this cell on, left or right?
     CGFloat sideOfView = (attributes.center.x < centerX) ? leftSide : rightSide;
 
@@ -48,6 +54,11 @@
     transform = CATransform3DRotate(transform, angle * -sideOfView, 0, 1, 0);
     attributes.transform3D = transform;
 
+    // Set the anchor point for the cell depending on the side
+    attributes.anchorPoint = (sideOfView == leftSide) ? CGPointMake(1, 0.5) : CGPointMake(0, 0.5);
+
+    // Set the amount of shadow to apply depending on the rotation value
+    attributes.shadowAlpha = adjustedPercentageX;
   }
   return array;
 }
