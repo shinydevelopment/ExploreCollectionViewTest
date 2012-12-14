@@ -16,8 +16,6 @@
   layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
   layout.minimumLineSpacing = 0;
   layout.minimumInteritemSpacing = 0;
-
-  [self.collectionView registerClass:[PhotoGridCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
 }
 
 #pragma mark UICollectionView data source
@@ -32,6 +30,7 @@
 {
   PhotoGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
   cell.backgroundColor = [self randomColor];
+  cell.indexPathLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
   return cell;
 }
 
