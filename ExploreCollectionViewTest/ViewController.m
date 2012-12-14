@@ -1,5 +1,6 @@
 #import "ViewController.h"
 #import "PhotoGridCollectionViewLayout.h"
+#import "PhotoGridCollectionViewCell.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -16,6 +17,8 @@
   layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
   layout.minimumLineSpacing = 0;
   layout.minimumInteritemSpacing = 0;
+
+  [self.collectionView registerClass:[PhotoGridCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
 
 //  // Fake shadowing on the collection view
 //  self.shadowLayer = [CAGradientLayer layer];
@@ -38,7 +41,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+  PhotoGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
   cell.backgroundColor = [self randomColor];
   return cell;
 }

@@ -21,6 +21,7 @@
 		5563FA1816777119002F654D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5563FA1616777119002F654D /* MainStoryboard.storyboard */; };
 		5563FA1B16777119002F654D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563FA1A16777119002F654D /* ViewController.m */; };
 		557F18C3167B91F90078B1D4 /* PhotoGridViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 557F18C2167B91F90078B1D4 /* PhotoGridViewLayoutAttributes.m */; };
+		557F18CB167B9A3F0078B1D4 /* PhotoGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557F18CA167B9A3F0078B1D4 /* PhotoGridCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		5563FA1A16777119002F654D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		557F18C1167B91F90078B1D4 /* PhotoGridViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewLayoutAttributes.h; sourceTree = "<group>"; };
 		557F18C2167B91F90078B1D4 /* PhotoGridViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewLayoutAttributes.m; sourceTree = "<group>"; };
+		557F18C9167B9A3F0078B1D4 /* PhotoGridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridCollectionViewCell.h; sourceTree = "<group>"; };
+		557F18CA167B9A3F0078B1D4 /* PhotoGridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				555541B016778C4B00FE4F70 /* PhotoGridCollectionViewLayout.m */,
 				557F18C1167B91F90078B1D4 /* PhotoGridViewLayoutAttributes.h */,
 				557F18C2167B91F90078B1D4 /* PhotoGridViewLayoutAttributes.m */,
+				557F18C9167B9A3F0078B1D4 /* PhotoGridCollectionViewCell.h */,
+				557F18CA167B9A3F0078B1D4 /* PhotoGridCollectionViewCell.m */,
 				5563FA0516777119002F654D /* Supporting Files */,
 			);
 			path = ExploreCollectionViewTest;
@@ -192,6 +197,7 @@
 				5563FA1B16777119002F654D /* ViewController.m in Sources */,
 				555541B116778C4B00FE4F70 /* PhotoGridCollectionViewLayout.m in Sources */,
 				557F18C3167B91F90078B1D4 /* PhotoGridViewLayoutAttributes.m in Sources */,
+				557F18CB167B9A3F0078B1D4 /* PhotoGridCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,3 @@
+@interface PhotoGridCollectionViewCell : UICollectionViewCell
+
+@end
