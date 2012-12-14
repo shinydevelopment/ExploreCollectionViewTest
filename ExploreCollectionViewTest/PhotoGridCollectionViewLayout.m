@@ -48,10 +48,6 @@
     transform = CATransform3DRotate(transform, angle * -sideOfView, 0, 1, 0);
     attributes.transform3D = transform;
 
-//    if (attributes == array[8]) {
-//      NSLog(@"%f %f", adjustedPercentageX, angle);
-//      attributes.transform3D = CATransform3DMakeScale(0.5, 0.5, 1);
-//    }
   }
   return array;
 }
