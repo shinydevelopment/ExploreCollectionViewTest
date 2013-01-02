@@ -48,7 +48,7 @@
     CGFloat adjustedPercentageX = percentageX / startPercentage;
 
     // Apply the transform modified by that percentage
-    CGFloat angle = M_PI_2 * (1 - adjustedPercentageX);
+    CGFloat angle = (M_PI / 4) * (1 - adjustedPercentageX);
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = 1.0 / -1000; // m34 must be set before the transform so it knows depth
     transform = CATransform3DRotate(transform, angle * sideOfView, 0, 1, 0);
